@@ -1,0 +1,22 @@
+{
+  "name": "test-rest",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mjhea0/node-rest-api",
+  "authors": [
+    "Michael Herman <michael@mherman.org>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.13",
+    "d3": "~3.4.2",
+    "nvd3": "~1.1.15-beta",
+    "angularjs-nvd3-directives": "~0.0.5-beta"
+  }
+}

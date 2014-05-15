@@ -1,0 +1,95 @@
+doctype html
+html(ng-app='demoAPI')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    title Node Angular Restful-API
+    link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css')
+    script(src='http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js')
+    script(src='javascripts/bower_components/angular/angular.js')
+    script(src='javascripts/bower_components/d3/d3.js')
+    script(src='javascripts/bower_components/nvd3/nv.d3.js')
+    script(src='javascripts/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='javascripts/main.js')
+    link(rel='stylesheet', href='javascripts/bower_components/nvd3/nv.d3.css')
+    link(rel='stylesheet', href='stylesheets/main.css')
+  body(ng-controller='mainController')
+    .header
+      .home-menu.pure-menu.pure-menu-open.pure-menu-horizontal.pure-menu-fixed
+        ul
+          li.pure-menu-selected
+            a(href='#') Home
+          li
+            a(href='#') Foo
+          li
+            a(href='#') Bar
+      #main
+        .header
+          h1 Analytics
+          h2 for the past thirty days
+          <br>
+          <br>
+        <br>
+        .content
+          .pure-g
+            <br>
+            .pure-u-1-4
+              h2 Total Users
+              h3 {{users}}
+            .pure-u-1-4
+              h2 Active Users
+              h3 {{active}}
+            .pure-u-1-4
+              h2 Total Posts
+              h3 {{posts}}
+            .pure-u-1-4
+              h2 Total Comments
+              h3 {{comments}}
+          <hr>
+          <br>
+          .pure-g
+            <br>
+            .pure-u-1-2
+              h2 Foo
+              nvd3-pie-chart(
+                data="foo"
+                showLabels="true"
+                margin="{left:10,top:10,bottom:10,right:0}"
+                x="xFunction()"
+                y="yFunction()"
+                height="300"
+                donut="true"
+                donutRatio=".5"
+                donutLabelsOutside="true")
+            .pure-u-1-2
+              h2 Bar
+              nvd3-pie-chart(
+                data="bar"
+                x="xFunction()"
+                y="yFunction()"
+                showLabels="true"
+                pieLabelsOutside="true"
+                showValues="true"
+                height="350"
+                labelType="percent")
+              <br>
+          <hr>
+          <br>
+          .pure-g
+            .pure-u-1-1
+              h2 Total Likes<br><br><br>
+              .div.test
+                nvd3-discrete-bar-chart(
+                  data='likes'
+                  margin="{left:45,top:15,bottom:50,right:2}"
+                  staggerLabels="true"
+                  showxaxis='true'
+                  showyaxis='true' 
+                  tooltips='true' 
+                  interactive='true'
+                  height="400"
+                  xAxisTickFormat="xAxisTickFormat_Date_Format()")
+
