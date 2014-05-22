@@ -27,4 +27,7 @@ describe("the home page HTML", function () {
   it('should link to a favicon', function() {
     testApp.expectSelector($, "link[rel=icon]");
   });
+  it('should have a login button', function() {
+    testApp.expectSelector($, "a.login");
+  });
 });

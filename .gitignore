@@ -1,1 +1,4 @@
 node
+config.local.js
+node_modules
+dev

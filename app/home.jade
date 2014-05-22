@@ -3,4 +3,10 @@ block variables
   - title = "FitBit Leader Board"
 block body
   h1= title
+  if user
+    p Thanks for logging in, #{user.displayName}
+    img(src=user.avatar)
+  else
+    a.button.login(href="/auth/fitbit") Connect FitBit&nbsp;
+    span to join the leader board!
 
