@@ -1,0 +1,17 @@
+- var title, pageTitle;
+block variables
+- pageTitle = title;
+- if (addTitleSuffix && title && title.indexOf(titleSuffix) < 0) {
+-   pageTitle = title + titleSuffix
+- }
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title=pageTitle
+    link(href="/favicon.ico", type="image/x-icon", rel="icon")
+  body
+    block body
+    block scripts
+      //- script(src="/browser.js")
+      //- script require("app/browser/navigation")
