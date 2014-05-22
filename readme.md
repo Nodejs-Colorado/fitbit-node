@@ -1,4 +1,4 @@
-## Node Rest API 
+## Node Rest API
 
 ### Analytics Dasboard
 
@@ -15,3 +15,4 @@
 
 ![pic](https://raw.github.com/mjhea0/node-rest-api/master/analytics-d3.png)
 
+(favico.ico stolen from FitBit.com and used without permission in exchange for the free marketing)
