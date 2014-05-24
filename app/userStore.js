@@ -7,7 +7,7 @@ function col() {
 }
 
 function contactToUser(contact) {
-  var user = _.pick(contact, "id", "provider");
+  var user = _.pick(contact, "id", "provider", "token", "tokenSecret");
   return _.extend(user, contact._json.user);
 }
 

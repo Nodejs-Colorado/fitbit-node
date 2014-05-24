@@ -7,8 +7,8 @@ app.set("view engine", "jade");
 app.locals.titleSuffix = " | FitBit Leader Board";
 app.locals.addTitleSuffix = true;
 
-require("./fitbitAuth")(app);
-
+app.use(require("./fitbitAuth"));
+app.use("/activities", require("./activities"));
 app.get("/", function (req, res) {
   res.locals.addTitleSuffix = false;
   res.render("home");

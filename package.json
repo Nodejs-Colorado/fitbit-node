@@ -22,8 +22,11 @@
     "lodash": "2.4.1",
     "moment": "2.5.1",
     "monk": "0.9.0",
+    "oauth": "^0.9.12",
     "passport": "0.2.0",
-    "passport-fitbit": "0.1.2"
+    "passport-fitbit": "0.1.2",
+    "superagent": "^0.18.0",
+    "superagent-oauth": "^0.2.3"
   },
   "devDependencies": {
     "cheerio": "0.16.0",

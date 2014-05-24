@@ -6,6 +6,7 @@ block body
   if user
     p Thanks for logging in, #{user.displayName}
     img(src=user.avatar)
+    a.button.logout(href="/auth/logout") Log Out
   else
     a.button.login(href="/auth/fitbit") Connect FitBit&nbsp;
     span to join the leader board!

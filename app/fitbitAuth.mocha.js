@@ -19,6 +19,13 @@ describe("FitBit authentication", function () {
       .end(done);
   });
 
+  it("GET /logout should redirect to home page", function(done) {
+    testApp.get("/auth/logout")
+      .expect("Location", "/")
+      .expect(302)
+      .end(done);
+  });
+
   it("should establish a session cookie for the home page", function(done) {
     testApp.get("/")
       .expect("Set-Cookie", /connect\.sid/i)

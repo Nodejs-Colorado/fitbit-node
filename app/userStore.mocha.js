@@ -14,12 +14,16 @@ describe("userStore", function () {
 
 describe("userStore.contactToUser", function () {
   it("should construct the correct user object for a fitbit contact", function() {
+    fitbitContact.token = "TOKEN";
+    fitbitContact.tokenSecret = "TOKENSECRET";
     var user = userStore.contactToUser(fitbitContact);
     _.each({
       id: "12345",
       displayName: "Bobby Tester",
       provider: "fitbit",
-      gender: "MALE"
+      gender: "MALE",
+      token: "TOKEN",
+      tokenSecret: "TOKENSECRET"
     }, function (value, property) {
       expect(user).toHaveProperty(property);
       expect(user[property]).toEqual(value);
