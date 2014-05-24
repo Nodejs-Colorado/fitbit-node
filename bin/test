@@ -1,5 +1,5 @@
 #!/bin/bash
 cd $(dirname "$0")/..
-
+export NODE_ENV=test
 find app -name '*.mocha.js' \
   | xargs ./node_modules/.bin/mocha --reporter spec

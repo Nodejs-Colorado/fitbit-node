@@ -1,16 +1,15 @@
-var app = require("express")();
-var connect = require("connect");
+var express = require("express");
 
+var app = express();
+app.use(express.static(__dirname + "/../public"));
 app.set("views", __dirname);
 app.set("view engine", "jade");
 app.locals.titleSuffix = " | FitBit Leader Board";
 app.locals.addTitleSuffix = true;
 
-app.use(connect.static(__dirname + "/../public"));
-require("./fitbitAuth")(app);
-
+app.use(require("./fitbitAuth"));
+app.use("/activities", require("./activities"));
 app.get("/", function (req, res) {
-  res.locals.user = req.user;
   res.locals.addTitleSuffix = false;
   res.render("home");
 });

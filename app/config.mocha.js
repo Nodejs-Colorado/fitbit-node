@@ -10,4 +10,8 @@ describe('config', function () {
   it('should have session stuff', function() {
     expect(config.session).toHaveProperty('secret');
   });
+
+  it('should have mongodb stuff', function() {
+    expect(config.mongodb).toHaveProperty('url');
+  });
 });
