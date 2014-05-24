@@ -1,0 +1,32 @@
+{
+  "_json": {
+    "user": {
+      "avatar": "https://d6y8zfzc2qfsl.cloudfront.net/E663D4A5-A102-CACA-F522-B885C54751E2_profile_100_square.jpg",
+      "avatar150": "https://d6y8zfzc2qfsl.cloudfront.net/E663D4A5-A102-CACA-F522-B885C54751E2_profile_150_square.jpg",
+      "country": "US",
+      "dateOfBirth": "1901-01-01",
+      "displayName": "Bobby Tester",
+      "distanceUnit": "en_US",
+      "encodedId": "123450",
+      "foodsLocale": "en_US",
+      "fullName": "Robert Tester",
+      "gender": "MALE",
+      "glucoseUnit": "en_US",
+      "height": 171.2,
+      "heightUnit": "en_US",
+      "locale": "en_US",
+      "memberSince": "2014-01-22",
+      "offsetFromUTCMillis": -25200000,
+      "strideLengthRunning": 90.0,
+      "strideLengthWalking": 75.4,
+      "timezone": "America/Los_Angeles",
+      "waterUnit": "en_US",
+      "weight": 72.9,
+      "weightUnit": "en_US"
+    }
+  },
+  "_raw": "{}",
+  "displayName": "Bobby Tester",
+  "id": "12345",
+  "provider": "fitbit"
+}

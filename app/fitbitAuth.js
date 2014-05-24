@@ -2,6 +2,7 @@ var config = require("config3");
 var FitbitStrategy = require("passport-fitbit").Strategy;
 var passport = require("passport");
 var session = require("express-session");
+var userStore = require("./userStore");
 
 var sessionOptions = {
   secret: config.session.secret
@@ -12,18 +13,22 @@ if (config.session.useMongodb) {
 }
 
 passport.serializeUser(function(user, done) {
-  done(null, user);
+  done(null, user._id);
 });
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
+
+passport.deserializeUser(function(_id, done) {
+  userStore.findById(_id, done);
 });
 passport.use(new FitbitStrategy(config.fitbit, fitbitSuccess));
 
-function fitbitSuccess(token, tokenSecret, profile, done) {
-    // User.findOrCreate({ fitbitId: profile.id }, function (err, user) {
-    //   return done(err, user);
-    // });
-  done(null, profile._json.user);
+function fitbitSuccess(token, tokenSecret, contact, done) {
+  userStore.saveContact(contact, function (error, user) {
+    if (error) {
+      done(error);
+      return;
+    }
+    done(null, user);
+  });
 }
 
 function setup(app) {
